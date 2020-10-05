@@ -7,14 +7,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 
 
-let smtp_login = process.env.SMTP_LOGIN || '---';
-let smtp_password = process.env.SMTP_PASSWORD || '---';
+// let smtp_login = process.env.SMTP_LOGIN || '---';
+// let smtp_password = process.env.SMTP_PASSWORD || '---';
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: smtp_login, // generated ethereal user
-    pass: smtp_password, // generated ethereal password
+    user: 'prdslife@gmail.com', // generated ethereal user
+    pass: 'Humanoid483', // generated ethereal password
   },
 });
 

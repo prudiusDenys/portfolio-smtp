@@ -25,6 +25,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
 
+app.get('/', function (req,res){
+  res.send('Hello World');
+})
+
 app.post('/sendMessage', async (req, res) => {
 
   let {name, email, phone, message} = req.body

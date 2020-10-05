@@ -31,7 +31,7 @@ app.get('/', function (req,res){
 
 app.post('/sendMessage', async (req, res) => {
 
-  let {name, email, phone, message} = req.body
+  let {message, phone, email, name} = req.body
 
   let info = await transporter.sendMail({
     from: 'Portfolio form', // sender address

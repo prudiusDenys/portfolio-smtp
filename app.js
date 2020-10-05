@@ -1,16 +1,20 @@
 const express = require('express')
 const app = express()
-const port = 3010
+const port = process.env.PORT || 3010;
 
 const nodemailer = require("nodemailer");
 const cors = require('cors');
 const bodyParser = require('body-parser')
 
+
+let smtp_login = process.env.SMTP_LOGIN;
+let smtp_password = process.env.SMTP_PASSWORD;
+
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'prdslife@gmail.com', // generated ethereal user
-    pass: 'Humanoid483', // generated ethereal password
+    user: smtp_login, // generated ethereal user
+    pass: smtp_password, // generated ethereal password
   },
 });
 
@@ -40,6 +44,7 @@ app.post('/sendMessage', async (req, res) => {
 
   res.send('Successful')
 })
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

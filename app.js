@@ -20,8 +20,8 @@ let smtp_password = process.env.SMTP_PASSWORD || '';
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'prdslife', // generated ethereal user
-    pass: 'Humanoid483', // generated ethereal password
+    user: 'testdenis12345@gmail.com', // generated ethereal user
+    pass: '123456789Denis', // generated ethereal password
     type: 'login'
   },
 });
@@ -32,7 +32,7 @@ app.post('/sendMessage', async (req, res) => {
 
   let info = await transporter.sendMail({
     from: 'Portfolio form', // sender address
-    to: "testdenis12345@gmail.com", // list of receivers
+    to: "prdslife@gmail.com", // list of receivers
     subject: "Message from my portfolio", // Subject line
     html: `<b>Сообщение с вашего портфолио</b>
         <div>name: ${name}</div>

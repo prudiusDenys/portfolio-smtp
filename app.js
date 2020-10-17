@@ -32,7 +32,7 @@ app.post('/sendMessage', async (req, res) => {
 
   let info = await transporter.sendMail({
     from: 'Portfolio form', // sender address
-    to: "testDenis12345", // list of receivers
+    to: "testdenis12345@gmail.com", // list of receivers
     subject: "Message from my portfolio", // Subject line
     html: `<b>Сообщение с вашего портфолио</b>
         <div>name: ${name}</div>
